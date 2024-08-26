@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: kk
+spec: 
+  replicas: 3
+  selector:
+    matchLabels:
+      env: dev
+  template:
+    metadata:
+      name: pod
+      labels:
+        env: dev
+    spec:
+      containers:
+      - name: my-con
+        image: httpd
+    
